@@ -5,6 +5,9 @@ import TeacherAssignment from "@/models/TeacherAssignment";
 import Student from "@/models/Student";
 import Unit from "@/models/Unit";
 import LearningObjective from "@/models/LearningObjective";
+import ClassModel from "@/models/Class";
+import SectionModel from "@/models/Section";
+import SubjectModel from "@/models/Subject";
 import PrintButton from "@/components/PrintButton";
 import AssessmentRow from "@/components/AssessmentRow";
 import Image from "next/image";
@@ -14,6 +17,10 @@ export default async function StudentEvaluationPage({ params }: { params: Promis
   await dbConnect();
   
   const { id, studentId } = await params;
+
+  ClassModel.init();
+  SectionModel.init();
+  SubjectModel.init();
 
   const assignment = await TeacherAssignment.findById(id).populate('classId sectionId subjectId teacherId');
   if (!assignment) return <div>Assignment not found</div>;

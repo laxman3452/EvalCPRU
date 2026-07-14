@@ -74,8 +74,8 @@ export default function StudentDashboardTabs({
           
           <div className="flex items-center justify-between mb-8 border-b-2 border-black pb-4">
             <div className="flex items-center gap-5">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-blue-900 print:border-black flex-shrink-0 bg-white">
-                <img src="/logo.png" alt="CPRU" className="object-contain w-full h-full p-1" />
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-blue-900 print:border-black flex-shrink-0 bg-white p-1">
+                <img src="/logo.png" alt="CPRU" className="object-contain w-full h-full" />
               </div>
               <div>
                 <h1 className="text-2xl lg:text-3xl font-bold text-blue-900 uppercase tracking-widest print:text-xl print:text-black">

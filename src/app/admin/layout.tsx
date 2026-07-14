@@ -18,8 +18,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       {/* Desktop sidebar */}
       <aside className="hidden lg:flex fixed left-0 top-0 h-full w-64 bg-white shadow-lg flex-col z-30 print:hidden">
         <div className="p-4 border-b border-gray-100 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-200 flex-shrink-0">
-            <img src="/logo.png" alt="CPRU" className="object-contain w-full h-full p-1" />
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-200 flex-shrink-0 p-0.5">
+            <img src="/logo.png" alt="CPRU" className="object-contain w-full h-full" />
           </div>
           <div>
             <p className="text-sm font-bold text-blue-700 leading-tight">Admin Portal</p>

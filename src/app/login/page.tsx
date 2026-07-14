@@ -4,6 +4,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import loginLogo from "../../../public/icon.png";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -37,8 +38,13 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         {/* Logo / School branding */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-white shadow-lg mb-4 overflow-hidden border-2 border-blue-100">
-            <img src="/logo.png" alt="CPRU Logo" className="object-contain w-full h-full p-2" />
+          <div className="mx-auto mb-5 flex items-center justify-center" style={{ width: '280px', height: '100px' }}>
+            <Image 
+              src={loginLogo} 
+              alt="CPRU Logo" 
+              className="object-contain w-full h-full drop-shadow-sm"
+              priority 
+            />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 leading-tight">
             Chaitanya Pathashala
