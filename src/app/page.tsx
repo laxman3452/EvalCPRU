@@ -1,0 +1,16 @@
+import { redirect } from "next/navigation";
+import { auth } from "../../auth";
+
+export default async function Home() {
+  const session = await auth();
+  
+  if (!session) {
+    redirect("/login");
+  } else if (session.user.role === "admin") {
+    redirect("/admin");
+  } else if (session.user.role === "teacher") {
+    redirect("/teacher");
+  }
+
+  return null;
+}

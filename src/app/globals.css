@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Force light theme — no dark mode auto-detection */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Reset: ensure all text is dark on light background */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ensure inputs always have visible text */
+input, select, textarea {
+  color: #0f172a;
+  background-color: #ffffff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #94a3b8;
+}
