@@ -1,6 +1,9 @@
 import { auth } from "../../../auth";
 import dbConnect from "@/lib/mongoose";
 import TeacherAssignment from "@/models/TeacherAssignment";
+import ClassModel from "@/models/Class";
+import SectionModel from "@/models/Section";
+import SubjectModel from "@/models/Subject";
 import Link from "next/link";
 
 import { getActiveAcademicYear } from "@/lib/getActiveAcademicYear";
@@ -9,6 +12,10 @@ export default async function TeacherDashboard() {
   const session = await auth();
   await dbConnect();
   
+  // Ensure models are registered (prevent tree shaking)
+  ClassModel.init();
+  SectionModel.init();
+  SubjectModel.init();
   const activeYear = await getActiveAcademicYear();
   const assignments = await TeacherAssignment.find({ 
     teacherId: session?.user?.id,
