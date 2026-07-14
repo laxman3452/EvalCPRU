@@ -3,6 +3,7 @@ import { Mukta } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { ClientProvider } from "@/components/ClientProvider";
+import NextTopLoader from "nextjs-toploader";
 
 import type { Viewport } from "next";
 
@@ -38,6 +39,19 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ colorScheme: "light" }}>
       <body className={mukta.className + " bg-slate-50 text-slate-900"} style={{ colorScheme: "light" }}>
+        <NextTopLoader
+          color="#2563eb"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={4}
+          crawl={true}
+          showSpinner={true}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #2563eb,0 0 5px #2563eb"
+          zIndex={1600}
+          showAtBottom={false}
+        />
         <ClientProvider>
           {children}
           <Toaster position="top-right" />
