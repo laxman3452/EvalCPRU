@@ -3,8 +3,8 @@ import type { MetadataRoute } from 'next'
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Chaitanya Pathashala Rapti Upatyaka',
-    short_name: 'CPRU Evaluation',
-    description: 'School Student Evaluation System',
+    short_name: 'CPRU-4,5',
+    description: 'School Student Evaluation System of class 4 and 5.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
