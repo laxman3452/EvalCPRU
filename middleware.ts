@@ -1,8 +1,13 @@
 import NextAuth from "next-auth";
 import { authConfig } from "./auth.config";
 
-// Use only the edge-compatible authConfig (no Mongoose) in middleware
-export default NextAuth(authConfig).auth;
+import type { NextRequest } from "next/server";
+
+const { auth } = NextAuth(authConfig);
+
+export default async function middleware(req: NextRequest) {
+  return await auth(req);
+}
 
 export const config = {
   // Skip static files, _next internals, and API auth routes
